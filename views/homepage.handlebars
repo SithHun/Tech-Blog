@@ -1,10 +1,12 @@
 <div class="col-12 col-md-4">
     <div class="col-12 col-md-8">
         <h2 class="subtitle">Showing Tech Blogs for: <span id="tech-post"></span></h2>
+        {{#each projects as |project|}}
         <div id="tech-container" class="list-group">
-            <ol class="blogs-ol">
-            Show Blogs Here
-            </ol>
+            <h3><ol class="blogs-ol">
+            <li><a href="/project/{{project.id}}">{{project.name}}</a> created by: {{user.name}}</li>
+            </ol></h3>
         </div>
+        {{/each}}
     </div>
 </div>
