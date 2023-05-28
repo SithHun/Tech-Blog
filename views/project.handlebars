@@ -3,6 +3,25 @@
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>
-    <button class="btn btn-primary">Read More</button>
+    <button class="btn btn-primary">..more</button>
   </p>
 </div>
+
+<div id="comment-section">
+  <h3>Comments</h3>
+  <br>
+  <div id="comments-container">
+    {{#each comments}}
+    <div>
+      <p>{{this.user.name}}: {{this.comments}}</p>
+    </div>
+    {{/each}}
+  </div>
+  <form id="comment-form">
+    <textarea id="comment-textarea" placeholder="Write your comment here"></textarea>
+    <br>
+    <button type="submit" id="comment-submit">Comment</button>
+  </form>
+</div>
+
+<script src="/js/project.js"></script>

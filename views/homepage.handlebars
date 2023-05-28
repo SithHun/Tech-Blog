@@ -1,11 +1,11 @@
 <div class="col-12 col-md-4">
     <div class="col-12 col-md-8">
-        <h2 class="subtitle">Showing Tech Blogs for: <span id="tech-post"></span></h2>
+        <h2 class="subtitle">Showing Tech Blogs for: <span id="tech-post"></span></h2><br>
         {{#each projects as |project|}}
         <div id="tech-container" class="list-group">
-            <h3><ol class="blogs-ol">
-            <li><a href="/project/{{project.id}}">{{project.name}}</a> created by: {{user.name}}</li>
-            </ol></h3>
+            <h3>
+            <li><a href="/project/{{project.id}}">{{project.name}}</a> created by: {{user.name}}</li><br>
+            </h3>
         </div>
         {{/each}}
     </div>
