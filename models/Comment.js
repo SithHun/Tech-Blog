@@ -27,7 +27,7 @@ Comment.init(
         key: 'id',
       },
     },
-    story_id: {
+    project_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'project',

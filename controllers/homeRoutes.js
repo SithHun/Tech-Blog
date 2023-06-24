@@ -37,11 +37,28 @@ router.get('/project/:id', async (req, res) => {
         },
       ],
     });
-
+    
     const project = projectData.get({ plain: true });
+
+    const commentsData = await Comment.findAll({
+      where: {
+        project_id: req.params.id,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    //serialize comments
+    const comments = commentsData.map((comment) => 
+      comment.get({ plain: true }));
 
     res.render('project', {
       ...project,
+      comments,
       logged_in: req.session.logged_in
     });
   } catch (err) {

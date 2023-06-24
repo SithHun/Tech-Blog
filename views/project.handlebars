@@ -2,12 +2,9 @@
   <h2>{{name}}</h2>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">..more</button>
-  </p>
 </div>
 
-<div id="comment-section">
+{{!-- <div id="comment-section">
   <h3>Comments</h3>
   <br>
   <div id="comments-container">
@@ -22,6 +19,53 @@
     <br>
     <button type="submit" id="comment-submit">Comment</button>
   </form>
+</div> --}}
+
+<div class="comment-container">
+  <div class="w-full bg-white rounded-lg border p-2 my-4 mx-6 shadow-md">
+    <h3 class="font-bold">Discussion</h3>
+    <form>
+      <div class="w-full px-3 my-2 justify-between flex">
+        <textarea
+          class="bg-white rounded leading-normal resize-none w-full h-12 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white border-b-2"
+          id="comment-textarea"
+          name="body"
+          placeholder="Comment Here"
+          required
+        ></textarea>
+        <div class="flex justify-end px-1">
+          <input
+            type="submit"
+            class="px-1 py-1 rounded-md text-white text-sm bg-black ml-2 hover:scale-105 hover:cursor-pointer"
+            id="comment-submit"
+            value="Post Comment"
+          />
+        </div>
+      </div>
+      {{#each comments as |comment|}}
+        <div class="flex flex-col">
+          <div class="rounded-md p-3 ml-3 my-3">
+            <div class="flex gap-3 items-center">
+              <img src="/imgs/coffee.svg" class="object-cover w-8 h-8" />
+              <h3 class="font-bold">{{comment.user.name}}</h3>
+            </div>
+            <p class="text-gray-600 mt-2">{{comment.comments}}</p>
+            {{#if comment.id}}
+              <button
+                data-id="{{comment.id}}"
+                class="text-gray-400 mt-2 text-sm px-2 py-1 rounded-md"
+                id="delcomment"
+              >delete</button>
+            {{else}}
+              <div></div>
+            {{/if}}
+            <div class="border-b bg-gray-300 w-25 mt-2"></div>
+          </div>
+        </div>
+      {{/each}}
+    </form>
+  </div>
 </div>
+
 
 <script src="/js/project.js"></script>
