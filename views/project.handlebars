@@ -1,25 +1,8 @@
-<div class="text-center">
+<div class="text-center inline:block">
   <h2>{{name}}</h2>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 </div>
-
-{{!-- <div id="comment-section">
-  <h3>Comments</h3>
-  <br>
-  <div id="comments-container">
-    {{#each comments}}
-    <div>
-      <p>{{this.user.name}}: {{this.comments}}</p>
-    </div>
-    {{/each}}
-  </div>
-  <form id="comment-form">
-    <textarea id="comment-textarea" placeholder="Write your comment here"></textarea>
-    <br>
-    <button type="submit" id="comment-submit">Comment</button>
-  </form>
-</div> --}}
 
 <div class="comment-container">
   <div class="w-full bg-white rounded-lg border p-2 my-4 mx-6 shadow-md">

@@ -5,29 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
     <title>Tech Blog</title>
 </head>
 
 <body>
-    <header class="hero">
-        <h1 class="app-title">
-          <i class="fa-regular fa-user"></i> Tech Blog!
-        </h1>
-        <p>Post And Read About Tech Blogs!
-        </p>
-        <nav>
-        <a href="/">Home</a>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">Dashboard</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-      </nav>
-    </header>
+<header class="hero flex flex-col justify-between">
+  <div class="flex items-center mb-5">
+    <h1 class="app-title flex-1 text-md mr-4">
+      <i class="far fa-user"></i> Tech Blog!
+    </h1>
+    <i class="flex-1 app-title text-base text-center">
+      Post And Read About Tech Blogs!
+    </i>
+  </div>
+  
+  <nav class="mt-auto flex items-center justify-end">
+    <a href="/" class="mr-12 hover:font-bold">Home</a>
+    <!-- Conditionally render login or logout links -->
+    {{#if logged_in}}
+    <a href="/profile" class="mr-12 hover:font-bold">Dashboard</a>
+    <button class="no-button" id="logout">Logout</button>
+    {{else}}
+    <a href="/login" class="mr-12 hover:font-bold border bg-[#38302e] shadow-lg rounded-sm p-1">Login</a>
+    {{/if}}
+  </nav>
+</header>
     
 <main class="flex-row justify-space-between">
     {{{body}}}
