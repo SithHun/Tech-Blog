@@ -26,7 +26,7 @@ So that I can publish articles, blog posts, and my thoughts and opinions.
 ## <ins>**Deployed Application**</ins>
 <br>
 
-* Deployed Application on Heroku: [Application](https://youtu.be/SRP6mmYWgFI)
+* Deployed Application on Heroku: [Tech-Blog-Post](https://shielded-crag-55388-ba89262db419.herokuapp.com/)
 
 * Github Repo: [Tech-Blog-Posts](https://github.com/SithHun/tech-blog-post)
 
