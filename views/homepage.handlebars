@@ -1,10 +1,11 @@
-<div class="col-12 col-md-4">
-    <div class="col-12 col-md-8">
-        <h2 class="subtitle">Showing Tech Blogs for: <span id="tech-post"></span></h2><br>
+<div class="flex justify-center items-center">
+    <div class="flex flex-col">
+        <h2 class="subtitle text-lg font-bold">Showing Tech Blogs for: <span id="tech-post"></span></h2><br>
         {{#each projects as |project|}}
-        <div id="tech-container" class="list-group">
+        <div id="tech-container" class="list-group border shadow-lg border rounded-md p-2 m-2 hover:scale-105 hover:translate-x-8">
             <h3>
-            <li><a href="/project/{{project.id}}">{{project.name}}</a> created by: {{user.name}}</li><br>
+            <li><a href="/project/{{project.id}}" class="text-lg hover:font-bold">{{project.name}}</a> 
+            <br><span class="text-sm italic">created by: {{user.name}}</span></li>
             </h3>
         </div>
         {{/each}}
