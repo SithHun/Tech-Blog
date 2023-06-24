@@ -1,15 +1,14 @@
 [
-    {
-      "name": "Music Near Me",
-      "description": "A mobile app that will send you notifications whenever a concert is playing in your area."
-    },
-    {
-      "name": "The Ultimate Tech Quiz",
-      "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
-    },
-    {
-      "name": "Roll 'Em Up",
-      "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
-    }
-  ]
-  
+  {
+    "name": "Tech Buzz",
+    "description": "A tech blog that provides regular updates on the latest happenings in the world of technology, including new gadgets, software releases, and industry trends."
+  },
+  {
+    "name": "Code Geeks",
+    "description": "A blog dedicated to programming and coding, offering tutorials, tips, and tricks for various programming languages, frameworks, and development tools."
+  },
+  {
+    "name": "Cybersecurity Insights",
+    "description": "A blog focusing on cybersecurity, providing in-depth analysis of the latest threats, best practices for securing digital systems, and updates on emerging technologies in the field."
+  }
+]
