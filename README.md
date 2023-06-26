@@ -1,5 +1,5 @@
 # Tech-Blog
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![javascript](https://img.shields.io/badge/langages-javascript-blue.svg) ![database](https://img.shields.io/badge/database-mysql-purple.svg) ![followers](https://img.shields.io/badge/followers-8-green.svg)
 
 Tech Blog allows users to create an account, access their dashboard to create a blog, and have their blog be featured in the frontpage. Engage with the community on recent blogs with the comment section and enjoy the user experience!
 
