@@ -52,7 +52,7 @@ User can locally run the application on their local computer or use the deployed
 
 
 ## Deployed Application
-*A list of links of deployed applications*
+*A list of links of deployed applications:*
 
 - [Tech-Blog on deployed heroku](https://shielded-crag-55388-ba89262db419.herokuapp.com/)
 - [Tech-Blog github repo](https://github.com/SithHun/tech-blog-post)
