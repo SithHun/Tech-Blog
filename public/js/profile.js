@@ -61,15 +61,18 @@ const newFormHandler = async (event) => {
     }
   };
   
-  document
-    .querySelector('.new-project-form')
-    .addEventListener('submit', newFormHandler);
+document
+  .querySelector('.new-project-form')
+  .addEventListener('submit', newFormHandler);
   
-  document
+document
+.querySelector('.project-update')
+.addEventListener('click', updateButtonHandler);
+  
+document
   .querySelector('.project-list')
-  .addEventListener('click', updateButtonHandler);
+  .addEventListener('click', delButtonHandler);
   
-  document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
-  
+document.getElementById("myButton").addEventListener("click", function() {
+  this.textContent = this.textContent === 'Edit' ? 'Update' : 'Edit';
+});
