@@ -20,83 +20,56 @@ const newFormHandler = async (event) => {
       }
     }
   };
-
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
   
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
-    });
-  
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-};
+  const updateButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
 
-// Edit Button
-const container = document.getElementById('container');
-const editButton = document.getElementById('editButton');
+      const updateData = document.getElementById('updateTextField').value.trim();
 
-const createUpdateButton = () => {
-  
-  container.removeChild(editButton);
+    if (updateData) {
+      const response = await fetch(`/api/projects/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ updateData })
+      });
 
-  const updateButton = document.createElement('button');
-  updateButton.textContent = 'Update';
-  updateButton.id = 'updateButton';
-
- 
-  const textField = document.createElement('input');
-  textField.type = 'text';
-  textField.id = 'updateTextField';
-
-  
-  container.appendChild(updateButton);
-  container.appendChild(textField);
-
-};
-
-const updateButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const updateData = document.getElementById('updateTextField').value.trim();
-
-  if (updateData) {
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ updateData })
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to update project');
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to update project');
+        }
       }
     }
-  }
-};
+  };
 
-
-editButton
-  .addEventListener('click', createUpdateButton);
-
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
   
-document
-.querySelector('.project-list')
-.addEventListener('click', updateButtonHandler);
+      const response = await fetch(`/api/projects/${id}`, {
+        method: 'DELETE',
+      });
   
-document
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  };
+  
+  document
+    .querySelector('.new-project-form')
+    .addEventListener('submit', newFormHandler);
+  
+  document
   .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  .addEventListener('click', updateButtonHandler);
+  
+  document
+    .querySelector('.project-list')
+    .addEventListener('click', delButtonHandler);
   
