@@ -61,18 +61,41 @@ const newFormHandler = async (event) => {
     }
   };
   
+  document.getElementById("myButton").addEventListener("click", function() {
+    var inputField = document.getElementById("inputField");
+    if(this.textContent === 'Edit') {
+      this.textContent = 'Update';
+  
+      // Create a new input field and add it to the page
+      var input = document.createElement("input");
+      input.type = "text";
+      input.id = "myInput";
+      inputField.appendChild(input);
+  
+      // Set the data-id attribute
+      this.setAttribute("data-id", "{{project.id}}");
+    } else {
+      this.textContent = 'Edit';
+  
+      // Remove the input field from the page
+      var input = document.getElementById("myInput");
+      inputField.removeChild(input);
+  
+      // Remove the data-id attribute
+      this.removeAttribute("data-id");
+    }
+  });
+  
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
   
 document
-.querySelector('.project-update')
-.addEventListener('click', updateButtonHandler);
+  .querySelector('.project-update')
+  .addEventListener('click', updateButtonHandler);
   
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
   
-document.getElementById("myButton").addEventListener("click", function() {
-  this.textContent = this.textContent === 'Edit' ? 'Update' : 'Edit';
-});
